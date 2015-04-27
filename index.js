@@ -41,7 +41,7 @@ function item (props) {
 
 import moment from 'moment';
 import titlegen from 'titlegen';
-import titleJSON from './titles_.json';
+import titleJSON from './titles.json';
 
 let titleGenerator = titlegen.create({
   max_word_count: 10,

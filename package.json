@@ -1,0 +1,30 @@
+{
+  "name": "fake-hacker-news",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify . | uglifyjs -m > bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0
+        }
+      ]
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.1.13",
+    "babelify": "^6.0.2",
+    "browserify": "^9.0.8",
+    "moment": "^2.10.2",
+    "titlegen": "0.0.2",
+    "uglify-js": "^2.4.20"
+  }
+}

@@ -43,22 +43,55 @@ import moment from 'moment';
 import titlegen from 'titlegen';
 import titleJSON from './titles.json';
 
-let titles = titleJSON.results.collection1.map(function (item) {
+let titleGenerator = titlegen.create({
+  max_word_count: 10,
+  max_attempts: 1000,
+});
+
+let titles = titleJSON.results.collection1.map((item) => {
   return item.title.text;
 });
 
-titlegen.config.max_word_count = 10;
-titlegen.config.max_attempts = 100;
+titleGenerator.feed(titles);
 
-titlegen.feed(titles);
+let urlGenerator = titlegen.create({
+  min_word_count: 2,
+  max_word_count: 4,
+  splitter: '.',
+  joiner: '.',
+});
+
+let urls = titleJSON.results.collection1.filter((item) => {
+  return !!item.url;
+}).map((item) => {
+  return item.url.replace(/[()]/g,'');
+});
+
+urlGenerator.feed(urls);
+
+let userGenerator = titlegen.create({
+  min_word_count: 4,
+  max_word_count: 12,
+  splitter: '',
+  joiner: '',
+});
+
+let users = titleJSON.results.collection1.filter((item) => {
+  return !!item.user;
+}).map((item) => {
+  return item.user.text;
+});
+
+userGenerator.feed(users);
 
 let html = [];
 
 for (let i=1; i <= 30; i += 1) {
   let timeAgo = 1000*60*(10 + (60 * 10) * Math.random());
   html.push(item({
-    title: titlegen(),
-    url: 'blah.com',
+    title: titleGenerator.next(),
+    url: urlGenerator.next(),
+    user: userGenerator.next(),
     num: i,
     formatted_time: moment(Date.now() - timeAgo).fromNow(),
     points: Math.floor(Math.random() * 100 * (timeAgo/(1000*60*60*5))),

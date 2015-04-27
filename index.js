@@ -32,7 +32,7 @@ function item (props) {
 <tr>
   <td colspan="2"></td>
   <td class="subtext">
-    <span class="score" >${points} points</span> by <a href="#">${user}</a> <a href="#">${formatted_time} ago</a> | <a href="#">flag</a> | <a href="#">${comment_count} comments</a> </td>
+    <span class="score" >${points} points</span> by <a href="#">${user}</a> <a href="#">${formatted_time}</a> | <a href="#">flag</a> | <a href="#">${comment_count} comments</a> </td>
 </tr>
 <tr class="spacer" style="height:5px"></tr>
 `;

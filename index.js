@@ -78,5 +78,5 @@ document.getElementById('content').innerHTML = html.join('');
 document.getElementsByTagName('body')[0].className = "";
 
 new Array(...document.querySelectorAll('a[href]')).forEach((el) => {
-  el.href = 'http://namuol.github.io/';
+  el.href = 'https://github.com/namuol/phaker-news';
 });

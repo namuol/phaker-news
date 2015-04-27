@@ -1,10 +1,9 @@
 {
-  "name": "fake-hacker-news",
+  "name": "phaker-news",
   "version": "0.0.0",
-  "description": "",
+  "description": "Phake version of the Hacker News frontpage made with titlegen.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify . | uglifyjs -m > bundle.js"
   },
   "browserify": {
@@ -17,7 +16,11 @@
       ]
     ]
   },
-  "author": "",
+  "author": {
+    "name": "Louis Acresti",
+    "email": "louis.acresti@gmail.com",
+    "url": "https://namuol.github.io"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.1.13",

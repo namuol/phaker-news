@@ -1,7 +1,7 @@
 # PHaker News
 
-[View it online](http://namuol.github.io/phaker-news).
+Fake version of the [Hacker News](http://news.ycombinator.com) frontpage.
 
-Phake version of the [Hacker News](http://news.ycombinator.com) frontpage.
+[View it online](http://namuol.github.io/phaker-news)
 
-Made using stupid first-order [Markov-Chains](http://en.wikipedia.org/wiki/Markov_chain) via [titlegen](http://github.com/namuol/titlegen).
+Made using [**titlegen**](http://github.com/namuol/titlegen).

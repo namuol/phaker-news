@@ -49,7 +49,7 @@ let titleGenerator = titlegen.create({
 });
 
 let titles = titleJSON.results.collection1.map((item) => {
-  return item.title.text.replace(/[^0-z!@#$%^&*',.;:\s]/g,'');
+  return item.title.text.replace(/[^0-z!@#$%^&*',.;:-\s]/g,'');
 });
 
 titleGenerator.feed(titles);

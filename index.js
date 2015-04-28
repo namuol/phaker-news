@@ -45,11 +45,11 @@ import titleJSON from './titles.json';
 
 let titleGenerator = titlegen.create({
   max_word_count: 10,
-  max_attempts: 1000,
+  max_attempts: 10000,
 });
 
 let titles = titleJSON.results.collection1.map((item) => {
-  return item.title.text;
+  return item.title.text.replace(/[^0-z!@#$%^&*',.;:\s]/g,'');
 });
 
 titleGenerator.feed(titles);
@@ -94,7 +94,7 @@ for (let i=1; i <= 30; i += 1) {
     user: userGenerator.next(),
     num: i,
     formatted_time: moment(Date.now() - timeAgo).fromNow(),
-    points: Math.floor(Math.random() * 100 * (timeAgo/(1000*60*60*5))),
+    points: 8 + Math.floor(Math.random() * 100 * (timeAgo/(1000*60*60*5)) + (30/(i*i))),
     comment_count: Math.floor(Math.random() * 100 * (timeAgo/(1000*60*60*5))),
   }));
 };

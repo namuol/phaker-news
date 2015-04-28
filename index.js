@@ -111,5 +111,9 @@ document.getElementById('content').innerHTML = html.join('');
 document.getElementsByTagName('body')[0].className = "";
 
 new Array(...document.querySelectorAll('a[href]')).forEach((el) => {
+  if (el.className.indexOf('keep') >= 0) {
+    return;
+  }
+  
   el.href = 'https://github.com/namuol/phaker-news';
 });
